@@ -1,8 +1,8 @@
-class Pramp {
+class findIndexWeights {
    public static void main(String[] args) {
-      String pramp = "Practice Makes Perfect";
-      System.out.println(pramp);
-      
+   		int[] arr = [1,2,4,3,2,6,43,25,14,35];
+   		int limit = 4;
+   		findLimit(arr, limit);
    }
    
    public static int[] findLimit(int[] arr, int limit){
@@ -25,20 +25,3 @@ class Pramp {
       return -1;
       
 }
-
-/*
-
-            
-function findComplementingWeights(arr, limit):
-   h = new hashTable()
-   for (index, w) in arr:
-      complementIndex = h.findKey(limit - w)
-      if (complementIndex != null):
-         return [index, complementIndex]
-      else:
-         h.insert(w, index)
-   return -1
-      
-Watch out for hashing the item weight before searching the hash table for its complement.
-For a weight w1 that equals limit/2 (its complement is also limit/2), hashing the weight before searching the complement can detect a couple even when only one item with weight w1 exists...
-            */
