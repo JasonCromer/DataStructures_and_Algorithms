@@ -16,10 +16,11 @@ class findConnectingFlights{
 		//Our starting flight
 		int startIndex = findStartPointIndex(flightsArr);
 
-		//Our starting flight set
-		String[] startFlights = flightsArr[i];
-
 		if(startIndex > 0){
+
+			//Our starting flight set
+			String[] startFlights = flightsArr[startIndex];
+
 			LinkedListNode head = createSortedLinkedList(flightsArr, startFlights);
 		}
 		else{
