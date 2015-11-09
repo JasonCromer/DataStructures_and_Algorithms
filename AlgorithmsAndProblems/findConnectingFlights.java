@@ -6,7 +6,9 @@
 	of each subarray is the arrival
 */
 
-class findConnectingFlights{
+import java.util.*;
+
+public class findConnectingFlights{
 	private static final int DEPARTURE_INDEX = 0;
 	private static final int ARRIVAL_INDEX = 1;
 
@@ -16,12 +18,18 @@ class findConnectingFlights{
 		//Our starting flight
 		int startIndex = findStartPointIndex(flightsArr);
 
-		if(startIndex > 0){
+		if(startIndex >= 0){
 
 			//Our starting flight set
 			String[] startFlights = flightsArr[startIndex];
 
 			LinkedListNode head = createSortedLinkedList(flightsArr, startFlights);
+
+			//Print out our linked list!
+			while(head.next != null){
+				head.printNode();
+				head = head.next;
+			}
 		}
 		else{
 			System.out.println("Sorry, starting flight doesn't exist.");
@@ -33,15 +41,16 @@ class findConnectingFlights{
 	public static int findStartPointIndex(String[][] flights){
 
 		//Create a hashtable and set key to the arrivals 
-		HashTable<String, String> arrivalTable = new HashTable<>();
+		Hashtable<String, String> arrivalTable = new Hashtable<>();
 
 		for(int i = 0; i < flights.length; i++){
-			arrivalTable.put(flights[i][ARRIVAL_INDEX]);
+			arrivalTable.put(flights[i][ARRIVAL_INDEX], flights[i][DEPARTURE_INDEX]);
 		}
 
 		//Go through array and see if our departure exists as an arrival, if not, we have our start point
 		for(int i = 0; i < flights.length; i++){
-			if(!arrivalTable.contains(flights[i][DEPARTURE_INDEX])){
+			if(!arrivalTable.containsKey(flights[i][DEPARTURE_INDEX])){
+				System.out.println("FOUND OUR START!");
 				return i;
 			}
 		}
@@ -53,10 +62,10 @@ class findConnectingFlights{
 	public static LinkedListNode createSortedLinkedList(String[][] flights, String[] start){
 
 		//Create a hashtable and set key to the departures
-		HashTable<String, String> departureTable = new HashTable<>();
+		Hashtable<String, String> departureTable = new Hashtable<>();
 
 		for(int i = 0; i < flights.length; i++){
-			departureTable.put(flights[i][DEPARTURE_INDEX]);
+			departureTable.put(flights[i][DEPARTURE_INDEX], flights[i][ARRIVAL_INDEX]);
 		}
 
 		//Create a variable to hold our current arrival and list node as we go through the hash table
@@ -88,11 +97,11 @@ class findConnectingFlights{
 
 class LinkedListNode{
 	String dep;
-	String arrival,
+	String arrival;
 	LinkedListNode next = null;
 	LinkedListNode previous = null;
 
-	public LinkedListNode(String d, String a,){
+	public LinkedListNode(String d, String a){
 		dep = d;
 		arrival = a;
 	}
@@ -103,5 +112,9 @@ class LinkedListNode{
 
 	public String getArrival(){
 		return arrival;
+	}
+
+	public void printNode(){
+		System.out.println("DEPT: " + dep + "; ARR: " + arrival);
 	}
 }
