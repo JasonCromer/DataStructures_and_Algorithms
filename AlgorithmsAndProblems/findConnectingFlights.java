@@ -50,7 +50,6 @@ public class findConnectingFlights{
 		//Go through array and see if our departure exists as an arrival, if not, we have our start point
 		for(int i = 0; i < flights.length; i++){
 			if(!arrivalTable.containsKey(flights[i][DEPARTURE_INDEX])){
-				System.out.println("FOUND OUR START!");
 				return i;
 			}
 		}
