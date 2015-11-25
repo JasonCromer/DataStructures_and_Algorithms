@@ -46,7 +46,7 @@ public class MergeOverlappingIntervals{
 
 
 	public static ArrayList<Interval> mergeIntervals(ArrayList<Interval> intervals){
-		if(intervals.size() == 0 || intervals.size() == 1) return intervals;
+		if(intervals.isEmpty() || intervals.size() == 1) return intervals;
 
 		Collections.sort(intervals, new IntervalComparator());
 
