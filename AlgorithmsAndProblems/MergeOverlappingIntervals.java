@@ -80,10 +80,7 @@ public class MergeOverlappingIntervals{
 
 
 class IntervalComparator implements Comparator {
-	public int compare(Object object1, Object object2){
-		Interval interval1 = (Interval) object1;
-		Interval interval2 = (Interval) object2;
-
+	public int compare(Interval interval1, Interval interval2){
 		return interval1.start - interval2.start;
 	}
 }
