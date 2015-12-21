@@ -2,8 +2,15 @@ import java.util.*;
 import java.lang.*;
 import java.io.*;
 
-/*Parse through the matrix by each row and column, then decrement them as you
-  spiral around. */
+/*
+    Given an NxM matrix, print each index of the matrix in a spiral order.
+
+    Solution concept:
+        Parse through the matrix by each row and column, then decrement them as you
+        spiral around. 
+  */
+
+
 class Ideone
 {
 	public static void main (String[] args) throws java.lang.Exception
