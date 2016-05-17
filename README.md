@@ -1,6 +1,6 @@
 # Data Structures and Algorithms
 
-This repository contains the following three main directories:
+This repository contains problems I've outlined and solved, and ones which I find both useful and crucial to understanding data structures and algorithms. This repository is composed of the following three main directories:
 
 + Algorithms and Problems
 + Data Structures
