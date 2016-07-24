@@ -17,4 +17,5 @@ designed applications?
 **Then study this shit.**
 
 
+
 ![KeepCalm](http://vignette3.wikia.nocookie.net/data-structures/images/5/56/Keep-calm-and-study-data-structures-1.png/revision/latest?cb=20140919152502)
